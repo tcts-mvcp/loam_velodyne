@@ -249,8 +249,8 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr& laserCloudMsg)
     point.y = laserCloudIn.points[i].z;
     point.z = laserCloudIn.points[i].x;
     point.curvature = laserCloudIn.points[i].intensity;
-    point.normal_x = laserCloudIn.points[i].x;
-    point.normal_y = laserCloudIn.points[i].y;
+    point.normal_x = laserCloudIn.points[i].x * laserCloudIn.points[i].x + laserCloudIn.points[i].y * laserCloudIn.points[i].y;
+    point.normal_y = atan2(laserCloudIn.points[i].x, laserCloudIn.points[i].y);
     point.normal_z = laserCloudIn.points[i].z;
 
     float angle = atan(point.y / sqrt(point.x * point.x + point.z * point.z)) * 180 / M_PI;
