@@ -9,4 +9,4 @@ Change point type to PointXYZINormal, and store original coordinate and intensit
 
 etc.
 
-If you would like to store original polar coordinate instead of Cartesian one, check polar branch.
+If you would like to store original polar (cylindrical) coordinate instead of Cartesian one, check polar branch.
